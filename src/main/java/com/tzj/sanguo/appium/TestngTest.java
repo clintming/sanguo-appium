@@ -1,34 +1,36 @@
 package com.tzj.sanguo.appium;
 
-import org.testng.annotations.*;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
- * Created by mingcl on 2017/12/18.
+ * Created by clint on 2017/12/18.
  */
-public class TestngTest {
-
-    @BeforeSuite
-    public void beforeSuit(){
-        System.out.println("run before suit");
-    }
+public class TestNgTest {
 
     @BeforeTest
-    public void setup(){
-        System.out.println("run setup");
+    public void setUp(){
+        System.out.println("running setup ...");
     }
 
     @Test
     public void testCase1(){
-        System.out.println("run testCase1");
+        System.out.println("running testcase 1 ...");
+        Assert.assertEquals("1","1");
     }
+
     @Test
     public void testCase2(){
-        System.out.println("run testCase2");
+        System.out.println("running testcase 2 ...");
+        Assert.assertEquals("1","2");
     }
 
     @AfterTest
     public void tearDown(){
-        System.out.println("run tearDown...");
+        System.out.println("running teardown ...");
     }
+
 }

@@ -1,6 +1,9 @@
 package com.tzj.sanguo.appium;
 
 
+import com.tzj.sanguo.appium.android.AppInstallation;
+import com.tzj.sanguo.appium.android.MultiThread;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -12,12 +15,20 @@ public class Test {
 
     public static void main(String[] args) throws MalformedURLException {
 
-        //runAndroidApp();
+        runAndroidApp();
 
     }
     public static void runAndroidApp() throws MalformedURLException {
-        //InstallApp installApp = new InstallApp();
-        //installApp.setUp();
+        String appPath = System.getProperty("user.dir")+"/apps/debt-debug.apk";
+        String appiumServerUrl = "http://127.0.0.1:4723/wd/hub";
+        String appiumServerUr2 = "http://127.0.0.1:4725/wd/hub";
+        String udid1 = "127.0.0.1:62025";
+        String udid2 = "127.0.0.1:62001";
+        AppInstallation installApp = new AppInstallation();
+        MultiThread multiThread = new MultiThread(appPath,appiumServerUrl,udid1);
+        MultiThread multiThread2 = new MultiThread(appPath,appiumServerUr2,udid2);
+        multiThread.start();
+        multiThread2.start();
     }
 
     public static void runPythonScript(){

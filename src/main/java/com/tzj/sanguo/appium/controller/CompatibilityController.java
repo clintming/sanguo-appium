@@ -103,7 +103,7 @@ public class CompatibilityController {
     @GetMapping("/install")
     @ResponseBody
     public String installApp() throws MalformedURLException {
-        installApp.setUp("");
+        //installApp.setUp("");
         return "运行完成";
     }
 

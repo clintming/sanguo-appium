@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class AppInstallation{
 
-    public void setUp(String appPath) throws MalformedURLException {
+    public void setUp(String appPath, String appiumServerUrl, String udid) throws MalformedURLException {
 //        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 //        desiredCapabilities.setCapability("device","android simulator");
 //        desiredCapabilities.setCapability("app","/debt-debug.apk");
@@ -26,9 +26,10 @@ public class AppInstallation{
         desiredCapabilities.setCapability("appium-version","1.5.3");
         desiredCapabilities.setCapability("platformName","android");
         desiredCapabilities.setCapability("platformVersion","5.0");
-        desiredCapabilities.setCapability("deviceName","emulator-5554");
+        desiredCapabilities.setCapability("deviceName",udid);
+        desiredCapabilities.setCapability("udid",udid);
         desiredCapabilities.setCapability("app",appPath);
-        AppiumDriver appiumDriver = new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"),desiredCapabilities);
+        AppiumDriver appiumDriver = new AppiumDriver(new URL(appiumServerUrl),desiredCapabilities);
         appiumDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 }

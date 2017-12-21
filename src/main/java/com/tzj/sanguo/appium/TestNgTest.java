@@ -1,3 +1,5 @@
+package com.tzj.sanguo.appium;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
