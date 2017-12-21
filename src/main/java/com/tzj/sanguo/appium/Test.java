@@ -1,15 +1,10 @@
 package com.tzj.sanguo.appium;
 
-import com.tzj.sanguo.appium.android.InstallApp;
+import com.tzj.sanguo.appium.android.AppInstallation;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.LineNumberReader;
 import java.net.MalformedURLException;
-
-import static com.sun.tools.doclint.Entity.sum;
-import static jdk.nashorn.internal.objects.Global.print;
 
 /**
  * Created by clint on 2017/12/16.
@@ -17,14 +12,16 @@ import static jdk.nashorn.internal.objects.Global.print;
 public class Test {
 
     public static void main(String[] args) throws MalformedURLException {
-
         runAndroidApp();
 
     }
 
     public static void runAndroidApp() throws MalformedURLException {
-        InstallApp installApp = new InstallApp();
-        installApp.setUp();
+        String appPath = System.getProperty("user.dir")+"/apps/debt-debug.apk";
+        String serverUrl = "http://127.0.0.1:4725/wd/hub";
+        String uuid = "emulator-5554";
+        AppInstallation installApp = new AppInstallation();
+        installApp.setUp(appPath, serverUrl,uuid);
     }
 
     public static void runPythonScript(){

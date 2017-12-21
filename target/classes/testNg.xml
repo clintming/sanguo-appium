@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite"> <!--parallel="true" 并行 -->
+    <test name="testAll">
+        <classes>
+            <class name="com.tzj.sanguo.appium.TestNgTest" >
+                <methods>
+                    <include name="testCase1"></include>
+                </methods>
+            </class>
+            <!-- <class name="com.yiibai.primera.testng.cases.RegisterTest" />
+            <class name="com.yiibai.primera.testng.cases.LoginTest" />
+            <class name="com.yiibai.primera.testng.cases.PersonalCenterTest" />
+            <class name="com.yiibai.primera.testng.cases.NewsDetailsTest" /> -->
+
+        </classes>
+        <!--<listeners>-->
+            <!--<listener class-name="org.uncommons.reportng.HTMLReporter" />-->
+            <!--<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />-->
+        <!--</listeners>-->
+    </test><!--Test -->
+</suite><!--Suite -->
