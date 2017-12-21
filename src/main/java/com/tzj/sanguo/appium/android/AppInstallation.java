@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * Created by clint on 2017/12/17.
  */
 @Component
-public class InstallApp {
+public class AppInstallation{
 
     public void setUp(String appPath) throws MalformedURLException {
 //        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();

@@ -1,0 +1,8 @@
+com\tzj\sanguo\appium\AppiumApplication.class
+com\tzj\sanguo\appium\service\CompatibilityService.class
+com\tzj\sanguo\appium\dao\VersionDao.class
+com\tzj\sanguo\appium\model\Version.class
+com\tzj\sanguo\appium\Test.class
+com\tzj\sanguo\appium\TestngTest.class
+com\tzj\sanguo\appium\android\AppInstallation.class
+com\tzj\sanguo\appium\controller\CompatibilityController.class

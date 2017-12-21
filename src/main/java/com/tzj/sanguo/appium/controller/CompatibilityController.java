@@ -1,6 +1,6 @@
 package com.tzj.sanguo.appium.controller;
 
-import com.tzj.sanguo.appium.android.InstallApp;
+import com.tzj.sanguo.appium.android.AppInstallation;
 import com.tzj.sanguo.appium.model.Version;
 import com.tzj.sanguo.appium.dao.VersionDao;
 import com.tzj.sanguo.appium.service.CompatibilityService;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Iterator;
 import java.util.List;
@@ -39,7 +37,7 @@ public class CompatibilityController {
     CompatibilityService compatibilityService;
 
     @Autowired
-    InstallApp installApp;
+    AppInstallation installApp;
 
     @GetMapping("/hello")
     @ResponseBody
@@ -105,7 +103,7 @@ public class CompatibilityController {
     @GetMapping("/install")
     @ResponseBody
     public String installApp() throws MalformedURLException {
-        installApp.setUp();
+        installApp.setUp("");
         return "运行完成";
     }
 
